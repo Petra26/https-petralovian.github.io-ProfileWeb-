@@ -1,0 +1,187 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container::before{
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #ff9e00;
+}
+.container .hero{
+    position: relative;
+    z-index: 10;
+    width: 75%;
+    height: 85vh;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(25px);
+    border: 3px solid #ff9e00;
+    border-radius: 20px;
+    box-shadow: -15px 17px 17px rgba(10,10,10,0.15);
+    padding: 0 40px 0 80px;
+}
+.hero nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+}
+.hero nav .logo{
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+}
+.hero nav .nav-links a{
+    color: #242424;
+    margin-left: 30px;
+    transition: 0.3s;
+}
+.hero nav .nav-links a:hover,
+.hero nav .nav-links a.active{
+    color: #ff9e00;
+}
+.hero .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 40px;
+}
+.hero .content .div-text{
+    width: 40%;
+}
+.hero .content .div-img{
+    position: absolute;
+    top: 80px;
+    right: 130px;
+    width: 30%;
+}
+.hero .content .div-img img{
+    width: 100%;
+}
+.hero .content .div-text h1{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 50px;
+    color: #444;
+}
+.hero .content .div-text h4{
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 400;
+    color: #fff;
+}
+.hero .content .div-text p{
+    color: #444;
+    margin-bottom: 50px;
+    font-size: 16px;
+}
+.hero .content .div-text .btn{
+    padding: 10px 15px;
+    background-color: #fff;
+    border: 2px solid #fff;
+    color: #444;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.hero .content .div-text .btn:hover{
+    background-color: transparent;
+    color: #fff;
+}
+.soc-links{
+    position: absolute;
+    top: 50%;
+    right: 45px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+}
+.soc-links a i{
+    font-size: 25px;
+    color: #444;
+    margin-bottom: 25px;
+    transition: 0.4s;
+}
+.soc-links a i:hover{
+    color: #ff9e00;
+}
+/* animation */
+.hero .logo,
+.hero .content .div-text h1,
+.hero .content .div-text h4,
+.hero .content .div-text .btn{
+    position: relative;
+    top: 50px;
+    animation: slide-top 0.5s linear forwards;
+    opacity: 0;
+}
+.hero .logo{
+    animation-delay: 0.2s;
+}
+.hero .content .div-text h1{
+    animation-delay: 0.5s;
+}
+.hero .content .div-text h4{
+    animation-delay: 0.9s;
+}
+.hero .content .div-text .btn{
+    animation-delay: 1.8s;
+}
+@keyframes slide-top{
+    0%{
+        top: 50px;
+        opacity: 0;
+    }
+    100%{
+        top: 0;
+        opacity: 1;
+    }
+}
+.hero .content .div-text p{
+    position: relative;
+    left: 100px;
+    animation: slide-right 0.5s linear forwards;
+    opacity: 0;
+    animation-delay: 1.3s;
+}
+@keyframes slide-right{
+    0%{
+        left: 100px;
+        opacity: 0;
+    }
+    100%{
+        left: 0;
+        opacity: 1;
+    }
+}
+.hero .content .div-img img{
+    transform: scale(0.8);
+    animation: fade-img 0.5s linear forwards;
+    animation-delay: 2.1s;
+    opacity: 0;
+}
+@keyframes fade-img{
+    0%{
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
